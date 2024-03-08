@@ -1,0 +1,43 @@
+# Ignore Visual Studio files
+.vs/
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore user-specific files
+*.suo
+*.user
+*.userprefs
+*.vscode/
+*.idea/
+
+# Ignore NuGet packages folder
+packages/
+
+# Ignore build artifacts
+*.dll
+*.exe
+
+# Ignore .NET Core and Visual Studio generated files
+*.pdb
+*.cache
+*.ipch
+*.log
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.sdf
+*.opensdf
+*.sln.docstates
+
+# Ignore ReSharper files
+_ReSharper*/
+
+# Ignore Rider files
+.idea/
+
+# Ignore Visual Studio Code settings
+.vscode/

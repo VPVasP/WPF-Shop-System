@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5ZA+bEp4opsXafXaOSlBSKDZWh4Szztr2QIQMAp0yXRvwwIlnGgx2i1Oo//vUxVDNpn9rABGuT1O5uDF5schwA==",
+  "dgSpecHash": "ItQKF7quc9/vkx/AuYPxuEc1CW8yToushtSfSsQpLiBJMrX3+dFmoiOnAIk/Z4+sjupTj9HOtyu5tTn/7YQw8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vasil\\Desktop\\C#\\ShopApplicationWPF\\ShopApplication\\ShopApplication.csproj",
+  "projectFilePath": "C:\\Users\\vasil\\Desktop\\C#\\WPFGitHubShopApplication\\WPF-Shop-Application\\ShopApplicationWPF\\ShopApplication\\ShopApplication.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

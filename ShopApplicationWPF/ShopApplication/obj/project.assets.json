@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vasil\\Desktop\\C#\\ShopApplicationWPF\\ShopApplication\\ShopApplication.csproj",
+      "projectUniqueName": "C:\\Users\\vasil\\Desktop\\C#\\WPFGitHubShopApplication\\WPF-Shop-Application\\ShopApplicationWPF\\ShopApplication\\ShopApplication.csproj",
       "projectName": "ShopApplication",
-      "projectPath": "C:\\Users\\vasil\\Desktop\\C#\\ShopApplicationWPF\\ShopApplication\\ShopApplication.csproj",
+      "projectPath": "C:\\Users\\vasil\\Desktop\\C#\\WPFGitHubShopApplication\\WPF-Shop-Application\\ShopApplicationWPF\\ShopApplication\\ShopApplication.csproj",
       "packagesPath": "C:\\Users\\vasil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vasil\\Desktop\\C#\\ShopApplicationWPF\\ShopApplication\\obj\\",
+      "outputPath": "C:\\Users\\vasil\\Desktop\\C#\\WPFGitHubShopApplication\\WPF-Shop-Application\\ShopApplicationWPF\\ShopApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
