@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Shop System" Height="450" Width="800">
     <Grid>
+        <Button  x:Name="BuyMilkButton" Content="Buy Milk" FontSize="24" FontWeight="Bold"
+              HorizontalAlignment="Right" VerticalAlignment="Top"
+              Margin="0,130,120,0" Width="500" Click="BuyMilk" />
+
 
     </Grid>
+
+
+
 </Window>
