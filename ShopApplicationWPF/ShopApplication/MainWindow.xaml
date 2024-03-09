@@ -7,13 +7,79 @@
         mc:Ignorable="d"
         Title="Shop System" Height="450" Width="800">
     <Grid>
-        <Button  x:Name="BuyMilkButton" Content="Buy Milk" FontSize="24" FontWeight="Bold"
-              HorizontalAlignment="Right" VerticalAlignment="Top"
-              Margin="0,130,120,0" Width="500" Click="BuyMilk" />
+        <TextBlock x:Name="CurrencyText"
+           Text="{Binding Path=CurrencyText, Mode=OneWay}"
+           FontSize="48"
+           HorizontalAlignment="Right"
+           VerticalAlignment="Top" />
+        
+        <TextBlock x:Name="BoughtItemText"
+Text="Product Name"
+FontSize="30"
+HorizontalAlignment="Right"
+VerticalAlignment="Top"
+Margin="0,950,900,0" />
+        
+        <Button x:Name="BuyMilkButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,30,1700,0" Width="150" Height="150" Click="BuyMilk">
+            <Button.Content>
+                <Image Source="Milk.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+        
+        <TextBlock x:Name="MilkProductName"
+           Text="Product Name"
+           FontSize="24"
+           HorizontalAlignment="Right"
+           VerticalAlignment="Top"
+           Margin="0,0,1750,0" />
+        <TextBlock x:Name="MilkPrice"
+     Text="Price:5"
+     FontSize="24"
+     HorizontalAlignment="Center"
+     VerticalAlignment="Top"
+     Margin="0,180,1650,0" />
 
 
+        <Button x:Name="BuyBreadButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+           Margin="0,30,1500,0" Width="150" Height="150" Click="BuyBread">
+            <Button.Content>
+                <Image Source="Bread.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <TextBlock x:Name="BreadProductName"
+      Text="Product Name"
+      FontSize="24"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Top"
+      Margin="0,0,1550,0" />
+        <TextBlock x:Name="BreadPrice"
+Text="Price:5"
+FontSize="24"
+HorizontalAlignment="Center"
+VerticalAlignment="Top"
+Margin="0,180,1250,0" />
+
+
+        <Button x:Name="BuyEggsButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+           Margin="0,30,1300,0" Width="150" Height="150" Click="BuyEggs">
+            <Button.Content>
+                <Image Source="Egg.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <TextBlock x:Name="EggProductName"
+      Text="Product Name"
+      FontSize="24"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Top"
+      Margin="0,0,1350,0" />
+        <TextBlock x:Name="EggPrice"
+Text="Price:5"
+FontSize="24"
+HorizontalAlignment="Center"
+VerticalAlignment="Top"
+Margin="0,180,850,0" />
     </Grid>
-
-
-
 </Window>
