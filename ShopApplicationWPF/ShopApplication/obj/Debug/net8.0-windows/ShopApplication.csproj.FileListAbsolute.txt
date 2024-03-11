@@ -19,3 +19,4 @@ C:\Users\vasil\Desktop\C#\WPFGitHubShopApplication\WPF-Shop-Application\ShopAppl
 C:\Users\vasil\Desktop\C#\WPFGitHubShopApplication\WPF-Shop-Application\ShopApplicationWPF\ShopApplication\obj\Debug\net8.0-windows\ShopApplication.pdb
 C:\Users\vasil\Desktop\C#\WPFGitHubShopApplication\WPF-Shop-Application\ShopApplicationWPF\ShopApplication\obj\Debug\net8.0-windows\ShopApplication.genruntimeconfig.cache
 C:\Users\vasil\Desktop\C#\WPFGitHubShopApplication\WPF-Shop-Application\ShopApplicationWPF\ShopApplication\obj\Debug\net8.0-windows\ref\ShopApplication.dll
+C:\Users\vasil\Desktop\C#\WPFGitHubShopApplication\WPF-Shop-Application\ShopApplicationWPF\ShopApplication\obj\Debug\net8.0-windows\ShopApplication_Content.g.cs

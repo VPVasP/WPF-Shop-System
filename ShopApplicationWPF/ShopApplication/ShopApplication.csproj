@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>MilkWPFIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,10 @@
     <None Remove="Egg.png" />
     <None Remove="Milk.png" />
     <None Remove="Tomato.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="MilkWPFIcon.ico" />
   </ItemGroup>
 
   <ItemGroup>
