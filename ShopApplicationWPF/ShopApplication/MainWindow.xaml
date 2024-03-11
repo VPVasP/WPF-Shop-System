@@ -6,80 +6,196 @@
         xmlns:local="clr-namespace:ShopApplication"
         mc:Ignorable="d"
         Title="Shop System" Height="450" Width="800">
-    <Grid>
+
+    <Grid Background="Tomato">
         <TextBlock x:Name="CurrencyText"
-           Text="{Binding Path=CurrencyText, Mode=OneWay}"
-           FontSize="48"
-           HorizontalAlignment="Right"
-           VerticalAlignment="Top" />
-        
-        <TextBlock x:Name="BoughtItemText"
-Text="Product Name"
-FontSize="30"
-HorizontalAlignment="Right"
-VerticalAlignment="Top"
-Margin="0,950,900,0" />
-        
+                   Text="{Binding Path=CurrencyText, Mode=OneWay}"
+                   FontSize="48"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top" />
+
         <Button x:Name="BuyMilkButton" HorizontalAlignment="Right" VerticalAlignment="Top"
                 Margin="0,30,1700,0" Width="150" Height="150" Click="BuyMilk">
             <Button.Content>
                 <Image Source="Milk.png" Stretch="Fill" />
             </Button.Content>
         </Button>
-        
+
+        <Button x:Name="SellMilkButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,800,1550,0" Width="150" Height="150" Click="SellMilk">
+            <Button.Content>
+                <Image Source="Milk.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+        <TextBlock x:Name="MilkInventoryQuantity"
+            Text="Milk Inventory Quantity"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,950,1570,0" />
+
+
+
         <TextBlock x:Name="MilkProductName"
-           Text="Product Name"
-           FontSize="24"
-           HorizontalAlignment="Right"
-           VerticalAlignment="Top"
-           Margin="0,0,1750,0" />
+                   Text="Product Name"
+                   FontSize="24"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Margin="0,0,1750,0" />
         <TextBlock x:Name="MilkPrice"
-     Text="Price:5"
-     FontSize="24"
-     HorizontalAlignment="Center"
-     VerticalAlignment="Top"
-     Margin="0,180,1650,0" />
+                   Text="Price:5"
+                   FontSize="24"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,180,1650,0" />
 
 
         <Button x:Name="BuyBreadButton" HorizontalAlignment="Right" VerticalAlignment="Top"
-           Margin="0,30,1500,0" Width="150" Height="150" Click="BuyBread">
+                Margin="0,30,1500,0" Width="150" Height="150" Click="BuyBread">
             <Button.Content>
                 <Image Source="Bread.png" Stretch="Fill" />
             </Button.Content>
         </Button>
 
-        <TextBlock x:Name="BreadProductName"
-      Text="Product Name"
-      FontSize="24"
+        <Button x:Name="SellBreadButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,800,1350,0" Width="150" Height="150" Click="SellBread">
+            <Button.Content>
+                <Image Source="Bread.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <TextBlock x:Name="BreadInventoryQuantity"
+      Text="Bread Inventory Quantity"
+      FontSize="16"
       HorizontalAlignment="Right"
       VerticalAlignment="Top"
-      Margin="0,0,1550,0" />
+      Margin="0,950,1300,0" />
+        <TextBlock x:Name="BreadProductName"
+                   Text="Product Name"
+                   FontSize="24"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Margin="0,0,1550,0" />
         <TextBlock x:Name="BreadPrice"
-Text="Price:5"
-FontSize="24"
-HorizontalAlignment="Center"
-VerticalAlignment="Top"
-Margin="0,180,1250,0" />
-
+                   Text="Price:5"
+                   FontSize="24"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,180,1250,0" />
 
         <Button x:Name="BuyEggsButton" HorizontalAlignment="Right" VerticalAlignment="Top"
-           Margin="0,30,1300,0" Width="150" Height="150" Click="BuyEggs">
+                Margin="0,30,1300,0" Width="150" Height="150" Click="BuyEggs">
+            <Button.Content>
+                <Image Source="Egg.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="SellEggsButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,800,1150,0" Width="150" Height="150" Click="SellEggs">
             <Button.Content>
                 <Image Source="Egg.png" Stretch="Fill" />
             </Button.Content>
         </Button>
 
         <TextBlock x:Name="EggProductName"
-      Text="Product Name"
-      FontSize="24"
-      HorizontalAlignment="Right"
-      VerticalAlignment="Top"
-      Margin="0,0,1350,0" />
+                   Text="Product Name"
+                   FontSize="24"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Margin="0,0,1350,0" />
         <TextBlock x:Name="EggPrice"
-Text="Price:5"
-FontSize="24"
-HorizontalAlignment="Center"
+                   Text="Price:5"
+                   FontSize="24"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,180,850,0" />
+
+        <Button x:Name="BuyCheeseButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,30,1100,0" Width="150" Height="150" Click="BuyCheese">
+            <Button.Content>
+                <Image Source="Cheese.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="SellCheeseButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,800,950,0" Width="150" Height="150" Click="SellCheese">
+            <Button.Content>
+                <Image Source="Cheese.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <TextBlock x:Name="CheeseProductName"
+                   Text="Product Name"
+                   FontSize="24"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Margin="0,0,1150,0" />
+        <TextBlock x:Name="CheesePrice"
+                   Text="Price:5"
+                   FontSize="24"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,180,450,0" />
+
+        <Button x:Name="BuyTomatoButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,30,900,0" Width="150" Height="150" Click="BuyTomato">
+            <Button.Content>
+                <Image Source="Tomato.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="SellTomatoButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,800,750,0" Width="150" Height="150" Click="SellTomato">
+            <Button.Content>
+                <Image Source="Tomato.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <TextBlock x:Name="TomatoProductName"
+                   Text="Product Name"
+                   FontSize="24"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Margin="0,0,950,0" />
+        <TextBlock x:Name="TomatoPrice"
+                   Text="Price:5"
+                   FontSize="24"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,180,50,0" />
+
+        <Button x:Name="BuyAppleButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,30,700,0" Width="150" Height="150" Click="BuyApple">
+            <Button.Content>
+                <Image Source="Apple.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="SellAppleButton" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,800,550,0" Width="150" Height="150" Click="SellApple">
+            <Button.Content>
+                <Image Source="Apple.png" Stretch="Fill" />
+            </Button.Content>
+        </Button>
+
+        <TextBlock x:Name="AppleProductName"
+                   Text="Product Name"
+                   FontSize="24"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Margin="0,0,750,0" />
+        <TextBlock x:Name="ApplePrice"
+                   Text="Price:5"
+                   FontSize="24"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,180,-350,0" />
+
+        <TextBlock x:Name="BoughtItemText"
+Text="Product Name"
+FontSize="30"
+HorizontalAlignment="Right"
 VerticalAlignment="Top"
-Margin="0,180,850,0" />
+Margin="0,450,900,0" />
     </Grid>
 </Window>

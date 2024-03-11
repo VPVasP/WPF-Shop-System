@@ -1,7 +1,7 @@
 ﻿
 namespace ShopApplication
 {
-   public class Item(string name, int itemPrice, int id)
+   public class Item(string name, int itemPrice, int id,int quantity)
     {
         public int Id { get; set; } = id;
         public string itemName { get; set; } = name;
@@ -11,6 +11,8 @@ namespace ShopApplication
         public  string productNameText { get; set; }
 
         public  string productPriceText { get; set; }
+
+        public int quantity { get; set; } = quantity;
     }
 
 }

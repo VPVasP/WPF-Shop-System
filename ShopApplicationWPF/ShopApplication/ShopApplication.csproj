@@ -9,15 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Apple.png" />
     <None Remove="Bread.png" />
+    <None Remove="Cheese.png" />
     <None Remove="Egg.png" />
     <None Remove="Milk.png" />
+    <None Remove="Tomato.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Apple.png" />
+    <Resource Include="Cheese.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Bread.png" />
     <Resource Include="Egg.png" />
     <Resource Include="Milk.png" />
+    <Resource Include="Tomato.png" />
   </ItemGroup>
 
 </Project>
