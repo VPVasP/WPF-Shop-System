@@ -19,12 +19,8 @@ namespace ShopApplication
             InitializeValues();
             InitializeItems();
         }
-        private void InitializeValues()
-        {
-            Currency = 200;
-            UpdateCurrencyText();
-            BoughtItemText.Text = "";
-        }
+       
+        //Hide the Sell Buttons and the Inventory Quantity Texts
         private void HideButtons()
         {
             SellMilkButton.Visibility = Visibility.Collapsed;
@@ -40,6 +36,7 @@ namespace ShopApplication
             SellAppleButton.Visibility = Visibility.Collapsed;
             AppleInventoryQuantity.Visibility = Visibility.Collapsed;
         }
+        //Initialize The items Values and the UI
         private void InitializeItems()
         {
             itemsList.Add(new Item("Milk", 3, 0, 0));
@@ -66,6 +63,16 @@ namespace ShopApplication
 
 
         }
+        //Initialize the values of other UI Elements
+        private void InitializeValues()
+        {
+            Currency = 200;
+            UpdateCurrencyText();
+            BoughtItemText.Text = "";
+        }
+
+        #region BuySpecificItems
+        //Buy Milk Button
         private void BuyMilk(object sender, RoutedEventArgs e)
         {
             BuyItems("Milk");
@@ -75,6 +82,7 @@ namespace ShopApplication
             MilkInventoryQuantityUI();
         }
 
+        //Buy Bread Button
         private void BuyBread(object sender, RoutedEventArgs e)
         {
             BuyItems("Bread");
@@ -82,7 +90,8 @@ namespace ShopApplication
             BreadInventoryQuantity.Visibility = Visibility.Visible;
             BreadInventoryQuantityUI();
         }
-
+        
+        //Buy Eggs Button
         private void BuyEggs(object sender, RoutedEventArgs e)
         {
             BuyItems("Eggs");
@@ -90,6 +99,7 @@ namespace ShopApplication
             EggsInventoryQuantity.Visibility = Visibility.Visible;
             EggsInventoryQuantityUI();
         }
+        //Buy Cheese Button
         private void BuyCheese(object sender, RoutedEventArgs e)
         {
             BuyItems("Cheese");
@@ -97,6 +107,7 @@ namespace ShopApplication
             CheeseInventoryQuantity.Visibility = Visibility.Visible;
             CheeseInventoryQuantityUI();
         }
+        //Buy Tomato Button
         private void BuyTomato(object sender, RoutedEventArgs e)
         {
             BuyItems("Tomato");
@@ -104,6 +115,7 @@ namespace ShopApplication
             TomatoInventoryQuantity.Visibility = Visibility.Visible;
             TomatoInventoryQuantityUI();
         }
+        //Buy Apple Button
         private void BuyApple(object sender, RoutedEventArgs e)
         {
             BuyItems("Apple");
@@ -111,43 +123,51 @@ namespace ShopApplication
             AppleInventoryQuantity.Visibility = Visibility.Visible;
             AppleInventoryQuantityUI();
         }
+        #endregion BuySpecificItems
 
-        
+        #region SellSpecificItems
+
+        //Sell Milk Button
         private void SellMilk(object sender, RoutedEventArgs e)
         {
             SellItems("Milk");
             MilkInventoryQuantityUI();
         }
+        //Sell Bread Button
         private void SellBread(object sender, RoutedEventArgs e)
         {
             SellItems("Bread");
             BreadInventoryQuantityUI();
         }
 
+        //Sell Eggs Button
         private void SellEggs(object sender, RoutedEventArgs e)
         {
             SellItems("Eggs");
             EggsInventoryQuantityUI();
         }
-
+        //Sell Cheese Button
         private void SellCheese(object sender, RoutedEventArgs e)
         {
             SellItems("Cheese");
             CheeseInventoryQuantityUI();
         }
-
+        //Sell Tomato Button
         private void SellTomato(object sender, RoutedEventArgs e)
         {
             SellItems("Tomato");
             TomatoInventoryQuantityUI();
         }
+        //Sell Apple Button
         private void SellApple(object sender, RoutedEventArgs e)
         {
             SellItems("Apple");
             AppleInventoryQuantityUI();
         }
+        #endregion SellSpecificItems
 
-
+        #region BuyAndSellItems
+        //Buy Items with Name Function
         public void BuyItems(string itemName)
         {
 
@@ -167,6 +187,7 @@ namespace ShopApplication
             }
 
         }
+        //Sell Items with Name Function
         public void SellItems(string itemName)
         {
             Item item = itemsList.Find(item => item.itemName == itemName);
@@ -181,6 +202,10 @@ namespace ShopApplication
 
             }
         }
+        #endregion BuyAndSellItems
+        #region UI Handler
+
+        //Milk Inventory UI Handler
         private void MilkInventoryQuantityUI()
         {
             Item item = itemsList.Find(item => item.itemName == "Milk");
@@ -188,7 +213,14 @@ namespace ShopApplication
             {
                 MilkInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
+            if (item.quantity == 0)
+            {
+                SellMilkButton.Visibility = Visibility.Collapsed;
+                MilkInventoryQuantity.Visibility = Visibility.Collapsed;
+            }
         }
+
+        //Bread Inventory UI Handler
         private void BreadInventoryQuantityUI()
         {
             Item item = itemsList.Find(item => item.itemName == "Bread");
@@ -196,8 +228,14 @@ namespace ShopApplication
             {
                 BreadInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
+            if (item.quantity == 0)
+            {
+                SellBreadButton.Visibility = Visibility.Collapsed;
+                BreadInventoryQuantity.Visibility = Visibility.Collapsed;
+            }
         }
 
+        //Eggs Inventory UI Handler
         private void EggsInventoryQuantityUI()
         {
             Item item = itemsList.Find(item => item.itemName == "Eggs");
@@ -205,8 +243,14 @@ namespace ShopApplication
             {
                 EggsInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
+            if (item.quantity == 0)
+            {
+                SellEggsButton.Visibility = Visibility.Collapsed;
+                EggsInventoryQuantity.Visibility = Visibility.Collapsed;
+            }
         }
 
+        //CheeseInventory UI Handler
         private void CheeseInventoryQuantityUI()
         {
             Item item = itemsList.Find(item => item.itemName == "Cheese");
@@ -214,8 +258,14 @@ namespace ShopApplication
             {
                 CheeseInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
+            if (item.quantity == 0)
+            {
+                SellCheeseButton.Visibility = Visibility.Collapsed;
+                CheeseInventoryQuantity.Visibility = Visibility.Collapsed;
+            }
         }
 
+        //Tomato Inventory UI Handler
         private void TomatoInventoryQuantityUI()
         {
             Item item = itemsList.Find(item => item.itemName == "Tomato");
@@ -223,14 +273,25 @@ namespace ShopApplication
             {
                 TomatoInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
+            if (item.quantity == 0)
+            {
+                SellTomatoButton.Visibility = Visibility.Collapsed;
+                TomatoInventoryQuantity.Visibility = Visibility.Collapsed;
+            }
         }
 
+        //Apple Inventory UI Handler
         private void AppleInventoryQuantityUI()
         {
             Item item = itemsList.Find(item => item.itemName == "Apple");
             if (item != null)
             {
                 AppleInventoryQuantity.Text =item.itemName+ " Quantity: " + item.quantity.ToString();
+            }
+            if (item.quantity == 0)
+            {
+                SellAppleButton.Visibility = Visibility.Collapsed;
+                AppleInventoryQuantity.Visibility = Visibility.Collapsed;
             }
         }
         private void UpdateCurrencyText()
@@ -244,3 +305,4 @@ namespace ShopApplication
 
 
 }
+#endregion UI Handler
