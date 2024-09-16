@@ -19,7 +19,7 @@ namespace ShopApplication
             InitializeValues();
             InitializeItems();
         }
-       
+
         //Hide the Sell Buttons and the Inventory Quantity Texts
         private void HideButtons()
         {
@@ -90,7 +90,7 @@ namespace ShopApplication
             BreadInventoryQuantity.Visibility = Visibility.Visible;
             BreadInventoryQuantityUI();
         }
-        
+
         //Buy Eggs Button
         private void BuyEggs(object sender, RoutedEventArgs e)
         {
@@ -171,7 +171,7 @@ namespace ShopApplication
         public void BuyItems(string itemName)
         {
 
-            Item item = itemsList.Find(item => item.itemName == itemName);
+            Item? item = itemsList.Find(item => item.itemName == itemName);
             if (item != null)
             {
                 if (Currency >= item.price)
@@ -190,14 +190,14 @@ namespace ShopApplication
         //Sell Items with Name Function
         public void SellItems(string itemName)
         {
-            Item item = itemsList.Find(item => item.itemName == itemName);
+            Item? item = itemsList.Find(item => item.itemName == itemName);
             if (item != null && item.quantity >= 1)
             {
                 Currency += item.price;
                 UpdateCurrencyText();
                 boughtItemsList.Remove(item);
                 Debug.WriteLine("Sold " + item.itemName);
-                BoughtItemText.Text = "You Sold " + item.itemName + " for " + item.price +"$"; 
+                BoughtItemText.Text = "You Sold " + item.itemName + " for " + item.price + "$";
                 item.quantity -= 1;
 
             }
@@ -208,90 +208,108 @@ namespace ShopApplication
         //Milk Inventory UI Handler
         private void MilkInventoryQuantityUI()
         {
-            Item item = itemsList.Find(item => item.itemName == "Milk");
+            Item? item = itemsList.Find(item => item.itemName == "Milk");
             if (item != null)
             {
                 MilkInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
-            if (item.quantity == 0)
-            {
-                SellMilkButton.Visibility = Visibility.Collapsed;
-                MilkInventoryQuantity.Visibility = Visibility.Collapsed;
-            }
+            if (item != null)
+                if (item.quantity == 0)
+                {
+                    SellMilkButton.Visibility = Visibility.Collapsed;
+                    MilkInventoryQuantity.Visibility = Visibility.Collapsed;
+                }
         }
+    
 
         //Bread Inventory UI Handler
         private void BreadInventoryQuantityUI()
         {
-            Item item = itemsList.Find(item => item.itemName == "Bread");
+
+            Item? item = itemsList.Find(item => item.itemName == "Bread");
             if (item != null)
             {
                 BreadInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
-            if (item.quantity == 0)
+            if (item != null)
             {
-                SellBreadButton.Visibility = Visibility.Collapsed;
-                BreadInventoryQuantity.Visibility = Visibility.Collapsed;
+                if (item.quantity == 0)
+                {
+                    SellBreadButton.Visibility = Visibility.Collapsed;
+                    BreadInventoryQuantity.Visibility = Visibility.Collapsed;
+                }
             }
         }
 
         //Eggs Inventory UI Handler
         private void EggsInventoryQuantityUI()
         {
-            Item item = itemsList.Find(item => item.itemName == "Eggs");
+            Item? item = itemsList.Find(item => item.itemName == "Eggs");
             if (item != null)
             {
                 EggsInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
-            if (item.quantity == 0)
+            if (item != null)
             {
-                SellEggsButton.Visibility = Visibility.Collapsed;
-                EggsInventoryQuantity.Visibility = Visibility.Collapsed;
+                if (item.quantity == 0)
+                {
+                    SellEggsButton.Visibility = Visibility.Collapsed;
+                    EggsInventoryQuantity.Visibility = Visibility.Collapsed;
+                }
             }
         }
 
         //CheeseInventory UI Handler
         private void CheeseInventoryQuantityUI()
         {
-            Item item = itemsList.Find(item => item.itemName == "Cheese");
+            Item? item = itemsList.Find(item => item.itemName == "Cheese");
             if (item != null)
             {
                 CheeseInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
-            if (item.quantity == 0)
+            if (item != null)
             {
-                SellCheeseButton.Visibility = Visibility.Collapsed;
-                CheeseInventoryQuantity.Visibility = Visibility.Collapsed;
+                if (item.quantity == 0)
+                {
+                    SellCheeseButton.Visibility = Visibility.Collapsed;
+                    CheeseInventoryQuantity.Visibility = Visibility.Collapsed;
+                }
             }
         }
 
         //Tomato Inventory UI Handler
         private void TomatoInventoryQuantityUI()
         {
-            Item item = itemsList.Find(item => item.itemName == "Tomato");
+            Item? item = itemsList.Find(item => item.itemName == "Tomato");
             if (item != null)
             {
                 TomatoInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
-            if (item.quantity == 0)
+            if (item != null)
             {
-                SellTomatoButton.Visibility = Visibility.Collapsed;
-                TomatoInventoryQuantity.Visibility = Visibility.Collapsed;
+                if (item.quantity == 0)
+                {
+                    SellTomatoButton.Visibility = Visibility.Collapsed;
+                    TomatoInventoryQuantity.Visibility = Visibility.Collapsed;
+                }
             }
         }
 
         //Apple Inventory UI Handler
         private void AppleInventoryQuantityUI()
         {
-            Item item = itemsList.Find(item => item.itemName == "Apple");
+            Item? item = itemsList.Find(item => item.itemName == "Apple");
             if (item != null)
             {
                 AppleInventoryQuantity.Text =item.itemName+ " Quantity: " + item.quantity.ToString();
             }
-            if (item.quantity == 0)
+            if (item != null)
             {
-                SellAppleButton.Visibility = Visibility.Collapsed;
-                AppleInventoryQuantity.Visibility = Visibility.Collapsed;
+                if (item.quantity == 0)
+                {
+                    SellAppleButton.Visibility = Visibility.Collapsed;
+                    AppleInventoryQuantity.Visibility = Visibility.Collapsed;
+                }
             }
         }
         private void UpdateCurrencyText()
@@ -301,8 +319,5 @@ namespace ShopApplication
 
 
     }
-
-
-
 }
 #endregion UI Handler
