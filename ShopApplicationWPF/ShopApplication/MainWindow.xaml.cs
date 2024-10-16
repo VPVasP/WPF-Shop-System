@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 namespace ShopApplication
 {
 
@@ -75,53 +76,40 @@ namespace ShopApplication
         //Buy Milk Button
         private void BuyMilk(object sender, RoutedEventArgs e)
         {
-            BuyItems("Milk");
-
-            SellMilkButton.Visibility = Visibility.Visible;
-            MilkInventoryQuantity.Visibility = Visibility.Visible;
-            MilkInventoryQuantityUI();
+               BuyItems("Milk");
+               UpdateQuanityUI("Milk", MilkInventoryQuantity,SellMilkButton);
         }
 
         //Buy Bread Button
         private void BuyBread(object sender, RoutedEventArgs e)
         {
             BuyItems("Bread");
-            SellBreadButton.Visibility = Visibility.Visible;
-            BreadInventoryQuantity.Visibility = Visibility.Visible;
-            BreadInventoryQuantityUI();
+            UpdateQuanityUI("Bread", BreadInventoryQuantity, SellBreadButton);
         }
 
         //Buy Eggs Button
         private void BuyEggs(object sender, RoutedEventArgs e)
         {
             BuyItems("Eggs");
-            SellEggsButton.Visibility = Visibility.Visible;
-            EggsInventoryQuantity.Visibility = Visibility.Visible;
-            EggsInventoryQuantityUI();
+            UpdateQuanityUI("Eggs", EggsInventoryQuantity, SellEggsButton);
         }
         //Buy Cheese Button
         private void BuyCheese(object sender, RoutedEventArgs e)
         {
             BuyItems("Cheese");
-            SellCheeseButton.Visibility = Visibility.Visible;
-            CheeseInventoryQuantity.Visibility = Visibility.Visible;
-            CheeseInventoryQuantityUI();
+            UpdateQuanityUI("Cheese", CheeseInventoryQuantity, SellCheeseButton);
         }
         //Buy Tomato Button
         private void BuyTomato(object sender, RoutedEventArgs e)
         {
             BuyItems("Tomato");
-            SellTomatoButton.Visibility = Visibility.Visible;
-            TomatoInventoryQuantity.Visibility = Visibility.Visible;
-            TomatoInventoryQuantityUI();
+            UpdateQuanityUI("Tomato", TomatoInventoryQuantity, SellTomatoButton);
         }
         //Buy Apple Button
         private void BuyApple(object sender, RoutedEventArgs e)
         {
             BuyItems("Apple");
-            SellAppleButton.Visibility = Visibility.Visible;
-            AppleInventoryQuantity.Visibility = Visibility.Visible;
-            AppleInventoryQuantityUI();
+            UpdateQuanityUI("Apple", AppleInventoryQuantity, SellAppleButton);
         }
         #endregion BuySpecificItems
 
@@ -131,38 +119,39 @@ namespace ShopApplication
         private void SellMilk(object sender, RoutedEventArgs e)
         {
             SellItems("Milk");
-            MilkInventoryQuantityUI();
+            UpdateQuanityUI("Milk", MilkInventoryQuantity, SellMilkButton);
         }
         //Sell Bread Button
         private void SellBread(object sender, RoutedEventArgs e)
         {
             SellItems("Bread");
-            BreadInventoryQuantityUI();
+            UpdateQuanityUI("Bread", BreadInventoryQuantity, SellBreadButton);
         }
 
         //Sell Eggs Button
         private void SellEggs(object sender, RoutedEventArgs e)
         {
             SellItems("Eggs");
-            EggsInventoryQuantityUI();
+            UpdateQuanityUI("Eggs", EggsInventoryQuantity, SellEggsButton);
         }
+    
         //Sell Cheese Button
         private void SellCheese(object sender, RoutedEventArgs e)
         {
             SellItems("Cheese");
-            CheeseInventoryQuantityUI();
+            UpdateQuanityUI("Cheese", CheeseInventoryQuantity, SellCheeseButton);
         }
         //Sell Tomato Button
         private void SellTomato(object sender, RoutedEventArgs e)
         {
             SellItems("Tomato");
-            TomatoInventoryQuantityUI();
+            UpdateQuanityUI("Tomato", TomatoInventoryQuantity, SellTomatoButton);
         }
         //Sell Apple Button
         private void SellApple(object sender, RoutedEventArgs e)
         {
             SellItems("Apple");
-            AppleInventoryQuantityUI();
+            UpdateQuanityUI("Apple", AppleInventoryQuantity, SellAppleButton);
         }
         #endregion SellSpecificItems
 
@@ -204,120 +193,32 @@ namespace ShopApplication
         }
         #endregion BuyAndSellItems
         #region UI Handler
-
-        //Milk Inventory UI Handler
-        private void MilkInventoryQuantityUI()
+        private void UpdateQuanityUI(string itemName, TextBlock itemTextBlock,Button sellButton)
         {
-            Item? item = itemsList.Find(item => item.itemName == "Milk");
+            Item? item = itemsList.Find(item => item.itemName == itemName);
             if (item != null)
             {
-                MilkInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
-            }
-            if (item != null)
-                if (item.quantity == 0)
-                {
-                    SellMilkButton.Visibility = Visibility.Collapsed;
-                    MilkInventoryQuantity.Visibility = Visibility.Collapsed;
-                }
-        }
-    
-
-        //Bread Inventory UI Handler
-        private void BreadInventoryQuantityUI()
-        {
-
-            Item? item = itemsList.Find(item => item.itemName == "Bread");
-            if (item != null)
-            {
-                BreadInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
+                itemTextBlock.Text = item.itemName + " Quantity: " + item.quantity.ToString();
             }
             if (item != null)
             {
                 if (item.quantity == 0)
                 {
-                    SellBreadButton.Visibility = Visibility.Collapsed;
-                    BreadInventoryQuantity.Visibility = Visibility.Collapsed;
+                    sellButton.Visibility = Visibility.Collapsed;
+                    itemTextBlock.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    sellButton.Visibility = Visibility.Visible;
+                    itemTextBlock.Visibility = Visibility.Visible;
                 }
             }
         }
 
-        //Eggs Inventory UI Handler
-        private void EggsInventoryQuantityUI()
-        {
-            Item? item = itemsList.Find(item => item.itemName == "Eggs");
-            if (item != null)
-            {
-                EggsInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
-            }
-            if (item != null)
-            {
-                if (item.quantity == 0)
-                {
-                    SellEggsButton.Visibility = Visibility.Collapsed;
-                    EggsInventoryQuantity.Visibility = Visibility.Collapsed;
-                }
-            }
-        }
-
-        //CheeseInventory UI Handler
-        private void CheeseInventoryQuantityUI()
-        {
-            Item? item = itemsList.Find(item => item.itemName == "Cheese");
-            if (item != null)
-            {
-                CheeseInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
-            }
-            if (item != null)
-            {
-                if (item.quantity == 0)
-                {
-                    SellCheeseButton.Visibility = Visibility.Collapsed;
-                    CheeseInventoryQuantity.Visibility = Visibility.Collapsed;
-                }
-            }
-        }
-
-        //Tomato Inventory UI Handler
-        private void TomatoInventoryQuantityUI()
-        {
-            Item? item = itemsList.Find(item => item.itemName == "Tomato");
-            if (item != null)
-            {
-                TomatoInventoryQuantity.Text = item.itemName + " Quantity: " + item.quantity.ToString();
-            }
-            if (item != null)
-            {
-                if (item.quantity == 0)
-                {
-                    SellTomatoButton.Visibility = Visibility.Collapsed;
-                    TomatoInventoryQuantity.Visibility = Visibility.Collapsed;
-                }
-            }
-        }
-
-        //Apple Inventory UI Handler
-        private void AppleInventoryQuantityUI()
-        {
-            Item? item = itemsList.Find(item => item.itemName == "Apple");
-            if (item != null)
-            {
-                AppleInventoryQuantity.Text =item.itemName+ " Quantity: " + item.quantity.ToString();
-            }
-            if (item != null)
-            {
-                if (item.quantity == 0)
-                {
-                    SellAppleButton.Visibility = Visibility.Collapsed;
-                    AppleInventoryQuantity.Visibility = Visibility.Collapsed;
-                }
-            }
-        }
         private void UpdateCurrencyText()
         {
             CurrencyText.Text = "Currency: " + Currency.ToString() + "$";
         }
-
-
     }
 }
 #endregion UI Handler
